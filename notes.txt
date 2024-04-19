@@ -1,0 +1,55 @@
+Relationship of the Post model to the Category model
+
+If a user is going to create a post --- requirement is to select a category
+
+User: Tim Watson
+User: John Smith
+
+POSTS table
+id                  description/title
+--------------------------------------
+1                   Trip To Maldives  ---> 1:Travel, 5:Career
+2                   Eating a Delicious Food ---> 2:Food, 3:Lifestyle
+3                   Watching Sci-Action Movies ---> 6:Movie, 4:Technology
+
+Categories table
+----------------------------
+1           Travel
+2           Food
+3           Lifestyle
+4           Technology
+5           Career
+6           Movie
+
+PIVOT Table (category_post) --- we will this pivot later on
+------------------------------------------
+post_id                 category_ids
+1                          1
+1                          5
+2                          2
+2                          3
+3                          6
+3                          4
+
+
+foreach($request->category){
+
+}
+
+
+*************************************************
+What is middleware?
+Answer: The middleware provides a mechanism for inspecting the HTTP request entering our application.
+If the user is not authenticated, then they cannot login to application. They can only go to login page
+
+Think of the "MIDDLEWARE" as an additional layer of security that examines the request going through the application
+
+The objective is we are going our own middleware. We will call "AdminMiddleware"
+
+The "AdminMiddleware" will allow the access to the admin dashboard. Our basis the role_id from the database
+Note: If the role_id of a user is equal 1, then they have access to the admin dashboard.
+
+
+What is GATE? --> is going to check whether the person/user is authorized to perform action/to click button, etc...
+
+

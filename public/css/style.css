@@ -1,0 +1,50 @@
+/* Make the navbar icon bigger */
+.icon-sm{
+    /* 32px */
+    font-size: 2rem;
+}
+.xsmall{
+    font-size: 0.65rem;
+}
+
+.icon-lg{
+    font-size: 9rem;
+}
+
+/* Post image in the Profile Page */
+.grid-image{
+    width: 100%;
+    height: 300px;
+    /* Height is not dynamic. Optimized for widescreen */
+    object-fit: cover;
+}
+.avatar-lg{
+    width: 9rem;
+    height: 9rem;
+    object-fit: cover;
+}
+
+.image-lg{
+    width: 9rem;
+    height: 9rem;
+    object-fit: cover;
+}
+
+.avatar-sm{
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+}
+
+.avatar-md{
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: cover;    
+}
+.icon-md{
+    font-size: 3.5rem;
+}
+
+.fa-heart{
+    font-size: 1.5rem;
+}
