@@ -52,4 +52,21 @@ Note: If the role_id of a user is equal 1, then they have access to the admin da
 
 What is GATE? --> is going to check whether the person/user is authorized to perform action/to click button, etc...
 
+********************************************
 
+
+Sender ID --- > User who is logged-in ( Auth::user()->id ) -- the id of the sender
+Receiever --- > Who is going to received the message ( $user->id ) -- the id of the receiver
+
+
+public function sender(){
+
+}
+
+public function receiver(){
+
+}
+
+Controller --> ChatController
+Model --> Chat
+Migration --> chats
