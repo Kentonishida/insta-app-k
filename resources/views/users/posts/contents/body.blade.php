@@ -27,6 +27,21 @@
         <div class="col-auto px-0">
             <span>{{ $post->likes->count() }}</span>
         </div>
+        {{-- Post save button --}}
+        <div class="col-auto">
+            @if ($post->befavorite())
+                <form action="{{ route('favorite.destroy', $post->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn shadow-none sm p-0"><i class="fa-solid text-dark fa-bookmark"></i></button>
+                </form>
+            @else
+                <form action="{{ route('favorite.store', $post->id) }}" method="post">
+                    @csrf
+                    <button type="submit" class="btn shadow-none sm p-0"><i class="fa-regular fa-bookmark"></i></button>
+                </form>
+            @endif
+        </div>
         <div class="col text-end">
             @forelse ($post->categoryPost as $category_post)
                 <span class="badge bg-secondary bg-opacity-50">{{ $category_post->category->name }}</span>

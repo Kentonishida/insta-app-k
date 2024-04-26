@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function(){
     # Route for homepage
     Route::get('/', [HomeController::class, 'index'])->name('index');
     Route::get('/people', [HomeController::class, 'search'])->name('search');
+    Route::get('/allsuggestedusers', [HomeController::class, 'allSuggestedUsers'])->name('allSuggestedUsers');
 
     # Open create post form
     Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
@@ -99,6 +100,13 @@ Route::group(['middleware' => 'auth'], function(){
         Route::post('/categories/store', [CategoriesController::class, 'store'])->name('categories.store');
         Route::patch('/category/{id}/update', [CategoriesController::class, 'update'])->name('categories.update');
         Route::delete('/category/{id}/destroy', [CategoriesController::class, 'destroy'])->name('categories.destroy');
+
+
+        #### collaborative project
+    Route::get('/favorite/{id}/show', [FavoriteController::class, 'showFavorites'])->name('favorite.show');
+    #### collaborative project
+    Route::post('/favorite/{post_id}/store',[FavoriteController::class, 'store'])->name('favorite.store');
+    Route::delete('/favorite/{post_id}/destroy',[FavoriteController::class, 'destroy'])->name('favorite.destroy');
     });
 
 });

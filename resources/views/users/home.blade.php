@@ -35,7 +35,7 @@
                 <div class="col ps-0">
                     <a href="{{ route('profile.show', Auth::user()->id) }}" class="text-decoration-none text-dark fw-bold">{{ Auth::user()->name }}</a>
                     <p class="text-muted mb-0">{{ Auth::user()->email }}</p>
-                </div>
+               </div>
             </div>
 
             {{-- suggested users --}}
@@ -44,7 +44,7 @@
                     <p class="fw-bold text-secondary">Suggestions For You</p>
                 </div>
                 <div class="col text-end">
-                    <a href="#" class="fw-bold text-dark text-decoration-none">See All</a>
+                    <a href="{{ route('allSuggestedusers')}}" class="fw-bold text-dark text-decoration-none">See All</a>
                 </div>
             </div>
 

@@ -106,4 +106,20 @@ class HomeController extends Controller
            */
         /**We need create search.blade.php */
     }
+
+    public function allSuggestedUsers()
+    {
+        $all_users = $this->user->all()->except(Auth::user()->id);
+        $allSuggested_users = [];
+        foreach($all_users as $user)
+        {
+            if(!$user->isFollowed())
+            {
+                $allSuggested_users[] = $user;
+            }
+        }
+        return view('users.viewusers')
+            ->with('allSuggested_users',$allSuggested_users);
+    }
+    
 }

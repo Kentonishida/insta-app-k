@@ -38,4 +38,18 @@ class Post extends Model
     {
         return $this->likes()->where('user_id', Auth::user()->id)->exists();
     }
+    #### Collaborative project
+    public function favorite(){
+        return $this->hasMany(Favorite::class);
+    }
+    public function befavorite() {
+        return $this->favorite()->where('user_id', Auth::user()->id)->exists();
+    }
+    #### Collaborative project
+    // public function favorite(){
+    //     return $this->hasMany(Favorite::class);
+    // }
+    // public function befavorite() {
+    //     return $this->favorite()->where('user_id', Auth::user()->id)->exists();
+    // }
 }
